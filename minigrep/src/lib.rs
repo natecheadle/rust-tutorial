@@ -1,3 +1,5 @@
+/// Searches contents for query.
+/// Uses case sensitive matching looking for any line that contains query
 pub fn search<'a>(query: &str, contents: &'a str) -> Vec<&'a str> {
     contents
         .lines()
@@ -5,6 +7,8 @@ pub fn search<'a>(query: &str, contents: &'a str) -> Vec<&'a str> {
         .collect()
 }
 
+/// Search contents (ignoring case) for query.
+/// Uses case insensitive matching looking for any line that contains query
 pub fn search_case_insensitive<'a>(query: &str, contents: &'a str) -> Vec<&'a str> {
     let query = query.to_lowercase();
     let mut results = Vec::new();
